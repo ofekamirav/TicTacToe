@@ -44,7 +44,7 @@
                 android:id="@+id/image00"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
 
         <FrameLayout
@@ -63,7 +63,7 @@
                 android:id="@+id/image01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button02"
@@ -81,7 +81,7 @@
                 android:id="@+id/image02"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"/>
+                android:scaleType="fitCenter"/>
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button10"
@@ -99,7 +99,7 @@
                 android:id="@+id/image10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"/>
+                android:scaleType="fitCenter"/>
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button11"
@@ -117,7 +117,7 @@
                 android:id="@+id/image11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button12"
@@ -135,7 +135,7 @@
                 android:id="@+id/image12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button20"
@@ -153,7 +153,7 @@
                 android:id="@+id/image20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button21"
@@ -171,7 +171,7 @@
                 android:id="@+id/image21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center" />
+                android:scaleType="fitCenter" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/button22"
@@ -189,7 +189,7 @@
                 android:id="@+id/image22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"/>
+                android:scaleType="fitCenter"/>
         </FrameLayout>
 
     </GridLayout>
