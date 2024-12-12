@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             for (j in 0..2) {
                 board[i][j] = 0
                 val imageView = findViewById<ImageView>(imageViews[i][j])
-                imageView.setImageResource(R.drawable.ic_launcher_foreground)
+                imageView.setImageResource(R.drawable.game_icon)
             }
         }
 
@@ -92,9 +92,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         //Slant check
-        if(board[0][0]==board[1][1] && board[1][1]==board[2][2])
+        if(board[0][0]!=0 && board[0][0]==board[1][1] && board[1][1]==board[2][2])
             return true
-        if(board[0][2]==board[1][1] && board[1][1]==board[2][0])
+        if(board[0][2]!=0 &&board[0][2]==board[1][1] && board[1][1]==board[2][0])
             return true
 
 
@@ -112,12 +112,12 @@ class MainActivity : AppCompatActivity() {
     private fun updateTurnText() {
         if (checkWin()) {
             val winner = if (isXturn) "O" else "X"
-            turnTextView.text = "ניצחון ל-$winner!"
+            turnTextView.text = ""
             GameOver("ניצחון ל-$winner!")
         } else if (checkDraw()) {
-            turnTextView.text = "תיקו!"
             GameOver("תיקו!")
-        } else {
+        }
+        else {
             turnTextView.text = if (isXturn) "תור של X" else "תור של O"
         }
     }
@@ -125,15 +125,14 @@ class MainActivity : AppCompatActivity() {
     private fun GameOver(message: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("המשחק נגמר!")
-        resetGame()
         builder.setMessage(message)
 
         builder.setPositiveButton("שחק שוב") { dialog, which ->
-            updateTurnText()
+            resetGame()
         }
 
         builder.setNegativeButton("יציאה") { dialog, which ->
-            finish() // סגירת האפליקציה
+            finish()
         }
         builder.setCancelable(false)//למנוע יציאה מהדיאלוג על ידי לחיצה על המסך
         builder.show()
@@ -143,11 +142,11 @@ class MainActivity : AppCompatActivity() {
         for (i in 0..2) {
             for (j in 0..2) {
                 board[i][j] = 0
-                val imageView = findViewById<ImageView>(imageViews[i][j])
-                imageView.setImageResource(R.drawable.ic_launcher_foreground)
+                val imageView = findViewById<ImageView>(resources.getIdentifier("image$i$j", "id", packageName))
+                imageView.setImageResource(R.drawable.game_icon)
             }
         }
         isXturn = true
-        updateTurnText();
+        turnTextView.text = "תור של X" // עדכון הטקסט רק בסיום האיפוס
     }
 }
